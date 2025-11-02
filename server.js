@@ -1,9 +1,11 @@
 // Express and Prisma setup
 const express = require('express');
 const { PrismaClient } = require('@prisma/client');
+const cors = require('cors');
 const app = express();
 const prisma = new PrismaClient();
 
+app.use(cors());
 app.use(express.json());
 
 // CRUD endpoints for Room
